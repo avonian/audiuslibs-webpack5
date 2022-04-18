@@ -57,13 +57,21 @@ module.exports = {
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ],
   },
-
-  resolve: {
-    modules: [paths.src, 'node_modules'],
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      '@': paths.src,
-      assets: paths.public,
-    },
-  },
+  // These rules help solve a number of the build errors:
+  // resolve: {
+  //   fallback: {
+  //     url: require.resolve("url/"),
+  //     assert: require.resolve("assert/"),
+  //     crypto: require.resolve('crypto-browserify'),
+  //     path: require.resolve('path-browserify'),
+  //     stream: require.resolve('stream-browserify'),
+  //     http: require.resolve('stream-http'),
+  //     https: require.resolve('https-browserify'),
+  //     child_process: false,
+  //     fs: false
+  //   },
+  // },
+  // experiments: {
+  //   syncWebAssembly: true
+  // }
 }
