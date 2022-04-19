@@ -58,20 +58,22 @@ module.exports = {
     ],
   },
   // These rules help solve a number of the build errors:
-  // resolve: {
-  //   fallback: {
-  //     url: require.resolve("url/"),
-  //     assert: require.resolve("assert/"),
-  //     crypto: require.resolve('crypto-browserify'),
-  //     path: require.resolve('path-browserify'),
-  //     stream: require.resolve('stream-browserify'),
-  //     http: require.resolve('stream-http'),
-  //     https: require.resolve('https-browserify'),
-  //     child_process: false,
-  //     fs: false
-  //   },
-  // },
-  // experiments: {
-  //   syncWebAssembly: true
-  // }
+  resolve: {
+    fallback: {
+      url: require.resolve('url/'),
+      assert: require.resolve('assert/'),
+      crypto: require.resolve('crypto-browserify'),
+      path: require.resolve('path-browserify'),
+      stream: require.resolve('stream-browserify'),
+      http: require.resolve('stream-http'),
+      https: require.resolve('https-browserify'),
+      os: require.resolve('os-browserify/browser'),
+      zlib: require.resolve('browserify-zlib'),
+      child_process: false,
+      fs: false,
+    },
+  },
+  experiments: {
+    syncWebAssembly: true
+  }
 }
